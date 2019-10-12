@@ -6,26 +6,45 @@ import Home from './Component/Home/Home';
 import Mainapp from './Component/App/Mainapp'
 import ProtectedRoute from './Protected/ProtectedRoute';
 
-//import {Authentication} from './Protected/ProtectedRoute';
+
+import {Authentication, getCookie} from './helper/helper';
 
 export default class App extends Component{
  constructor(props){
    super(props);
    this.state = {
      isLoggedIn: false, //set based in token later
-     redirectToApp: false
+     redirectToApp: false,
+     loading: true
    }
    this.loginController = this.loginController.bind(this)
+ }
+ componentDidMount(){
+    const initAuthCheck = Authentication.isLoggedIn();
+    if(initAuthCheck){
+      this.setState({
+        isLoggedIn: true,
+        redirectToApp: true,
+        loading: false
+      })
+    }else{
+      this.setState({
+        loading: false
+      })
+    }
  }
 
  loginController(){
    this.setState({
      isLoggedIn: true,
-     redirectToApp: true
+     redirectToApp: true,
+     loading: false
    })
  }
+
  render(){
    return (
+     (this.state.loading) ? 'loading ...' : 
      <BrowserRouter>
         <div className = "wholeContainer"> 
           <Switch>
@@ -34,7 +53,6 @@ export default class App extends Component{
               render = {(props) => <Home {...props}
                                         isLoggedIn = {this.state.isLoggedIn} 
                                         loginController = {this.loginController}
-                                        redirectToApp = {this.state.redirectToApp}
                                         />} />
             <ProtectedRoute path ='/app' component = {Mainapp}/>
           </Switch>

@@ -12,8 +12,7 @@ export default class LoginForm extends React.Component {
         this.state ={
             username: '',
             password: '',
-            redirect: false,
-            render: 1
+            redirect: null
         }
         this.formHandler = this.formHandler.bind(this);
         this.signIn = this.signIn.bind(this);
@@ -34,7 +33,7 @@ export default class LoginForm extends React.Component {
             email: this.state.username,
             password: this.state.password
         }
-        fetch(apiBaseLink, {
+        fetch(apiBaseLink + '/users/login', {
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(data)
@@ -45,7 +44,7 @@ export default class LoginForm extends React.Component {
             return response.json()
         })
         .then(data => {
-            console.log(data)
+            
             setCookie('token', data.token)
             Authentication.isLoggedIn();
             console.log(Authentication.loggedIn)
@@ -54,6 +53,7 @@ export default class LoginForm extends React.Component {
                 username: '',
                 redirect: true
             })
+            parent.props.loginController();
           
         })
         .catch(error => console.log('error', error))

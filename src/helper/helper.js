@@ -1,8 +1,12 @@
-const apiBaseLink =  'https://task-app-heroku.herokuapp.com/users/login';
-const Authentication = {
+const apiBaseLink =  'https://task-app-heroku.herokuapp.com';
+const Authentication = { 
     loggedIn: false,
     isLoggedIn(){
-        this.loggedIn = true
+        let cookie =   getCookie('token')
+        if(!cookie || cookie == null){
+            return this.loggedIn = false
+        }
+        return this.loggedIn = true
     }
 }
 
