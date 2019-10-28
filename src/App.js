@@ -74,6 +74,9 @@ logoutController(){
                                         loginController = {this.loginController}
                                         />} />
             <ProtectedRoute path ='/app' logoutController = {this.logoutController} component = {Mainapp} />
+            <Route component = {() => {
+              return <h1>This page Does not exist!!</h1>
+            }} />
           </Switch>
         </div>
      </BrowserRouter>
