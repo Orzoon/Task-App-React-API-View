@@ -12,7 +12,7 @@ export default class App extends Component{
  constructor(props){
    super(props);
    this.state = {
-     isLoggedIn: false, //set based in token later
+     isLoggedIn: false, //set based on token later
      redirectToApp: false,
      loading: true
    }
