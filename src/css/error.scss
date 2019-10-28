@@ -1,0 +1,28 @@
+.errorComponent{
+    position: fixed;
+    height: auto;
+    width: auto;
+    color: #fff;
+    bottom: 30px;
+    left: 20px;
+    padding: 10px;
+    z-index: 999999999999999999;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,.1);
+}
+
+@media only screen and (min-width: '500px'){
+    .errorComponent {
+        padding: 12px;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+}
+@media only screen and (min-width: '1280px'){
+    .errorComponent {
+        padding: 15px;
+        font-size: 17px;
+        letter-spacing: 1px;
+        left: 100px;
+    }
+}

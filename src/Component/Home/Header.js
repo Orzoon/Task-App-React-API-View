@@ -1,6 +1,8 @@
 import React from 'react';
 import "../../css/header.scss";
 
+//Icons
+
 
 const Logo = (props) => {
     return (
@@ -24,9 +26,12 @@ export default class Header extends React.Component{
     render(){
      
         return(
-            <div className="headerContainer">
-            <Logo logo = {this.state.logo} />
-        </div>
+            <div className ="headerWrapper">
+             <div className="headerContainer">
+                <Logo logo = {this.state.logo} />
+                {this.props.children}
+             </div>
+            </div>
         )
     }
 }

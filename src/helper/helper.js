@@ -7,7 +7,14 @@ const Authentication = {
             return this.loggedIn = false
         }
         return this.loggedIn = true
+    },
+    isLoggedOut(){
+        let now = new Date().toUTCString();
+        let path = '/'
+        document.cookie = `token=; expires=${now}; path=${path};`;
+        this.loggedIn = false;
     }
+
 }
 
 
@@ -30,6 +37,6 @@ const getCookie = (name) => {
 }
 
 const setCookie = (name,value) => {
-    document.cookie = `${name}=${value}`;
+    document.cookie =`${name}=${value}`;
 }
 export {getCookie, setCookie, apiBaseLink, Authentication}

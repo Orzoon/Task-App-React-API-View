@@ -1,0 +1,97 @@
+div.signupFormContainer{
+    position: relative;
+    width: 100%;
+    background: #fff;
+    height: 800px;
+    margin-top: 90px;
+}
+.errorMessage {
+    color: red;
+    margin-top: -15px;
+    margin-bottom: 20px;
+  
+}
+.homeSignupLoader {
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+}
+    
+form.signupForm{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.1);
+    height: 610px;
+    & .formHeadingSignup{
+        height: 180px;
+        background: linear-gradient(to right,#1976D2, rgb(118, 190, 223));
+        margin-bottom: 50px;
+        color: #fff;
+        text-align: center;
+        font-size: 25px;
+        font-family: inherit;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+    }
+    & div {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+    & div.input{
+        padding: 0px 15px 0px 15px;
+    }
+    & div.btn-signup {
+      margin-top: 20px;
+      position: relative;
+    }
+    & button {
+        width: 140px;
+    }
+    & div.signup-link {
+        margin-top: 15px;
+        text-align: left;
+    
+        & a{
+            text-decoration: none;
+            color: "#1976D2";
+         
+
+            &:link{
+                color:"#1976D2";
+            }
+            &:visited{
+                color: "#1976D2";
+            }
+            &:hover{
+                text-decoration: underline;
+            }
+            &:active{
+                color: "#1976D2";
+            }
+        }
+    }
+}
+
+@media only screen and (min-height: '500px'){
+    div.loginFormContainer{
+        margin-top: 60px;
+        height: 650px;
+    }
+}
+@media only screen and (min-height: '900px'){
+    div.loginFormContainer{
+        margin-top: 80px;
+        height: 800px;
+    }
+}
+
+@media only screen and (min-width: '1280px'){
+    form.signupForm{
+        width: 400px;
+    }
+}
