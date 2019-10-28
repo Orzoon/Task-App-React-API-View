@@ -313,7 +313,6 @@ export default class Task extends Component {
 
        
     }
-
     render(){
         const {tasks} = this.state;
         return (
