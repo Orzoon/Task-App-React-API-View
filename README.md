@@ -3,8 +3,6 @@ View of Task-APP
 
 ReactJS  
 
-UI Library:::: Ant Design
-
 ===============
 
 all the data are fetched from Task app's API
